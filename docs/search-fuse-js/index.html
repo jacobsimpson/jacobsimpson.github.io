@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='Everyone with even a little experience in Unix has their own special aliases. Maybe you have:
+alias cdw=&quot;cd ~/workspace&quot;  to take you to the directory where you have your projects. Maybe you have some really sophisticated aliases that change your bash configuration and path when you hit a certain directory.
+One of the challenges I found when I moved off of csh to bash was csh aliases had parameters, so you could make niffty aliases that had some value in the middle:'>
+<meta name='theme-color' content='#ffcd00'>
+
+<meta property='og:title' content='Custom Tab Completion in Bash • Technotes'>
+<meta property='og:description' content='Everyone with even a little experience in Unix has their own special aliases. Maybe you have:
+alias cdw=&quot;cd ~/workspace&quot;  to take you to the directory where you have your projects. Maybe you have some really sophisticated aliases that change your bash configuration and path when you hit a certain directory.
+One of the challenges I found when I moved off of csh to bash was csh aliases had parameters, so you could make niffty aliases that had some value in the middle:'>
+<meta property='og:url' content='http://jacobsimpson.github.io/docs/search-fuse-js/'>
+<meta property='og:site_name' content='Technotes'>
+<meta property='og:type' content='article'><meta property='article:section' content='docs'><meta property='article:tag' content='bash'><meta property='article:published_time' content='2011-05-05T01:00:00-08:00'/><meta property='article:modified_time' content='2011-05-05T01:00:00-08:00'/><meta name='twitter:card' content='summary'>
+
+<meta name="generator" content="Hugo 0.59.1" />
+
+  <title>Custom Tab Completion in Bash • Technotes</title>
+  <link rel='canonical' href='http://jacobsimpson.github.io/docs/search-fuse-js/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.6a060eb7.css'><style>
+:root{--color-accent:#ffcd00;}
+</style>
+
+  
+
+</head>
+<body class='page type-docs has-sidebar'>
+
+  <div class='site'><div id='sidebar' class='sidebar'>
+  <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
+
+  <div class='container'><section class='widget widget-about sep-after'>
+  <header>
+    
+    <div class='logo'>
+      <a href='/'>
+        <img src='/images/logo.png'>
+      </a>
+    </div>
+    
+    <h2 class='title site-title '>
+      <a href='/'>
+      Technotes
+      </a>
+    </h2>
+    <div class='desc'>
+    
+    </div>
+  </header>
+
+</section>
+<section class='widget widget-sidebar_menu sep-after'><nav id='sidebar-menu' class='menu sidebar-menu' aria-label='Sidebar Menu'>
+    <div class='container'>
+      <ul><li class='item'>
+  <a href='/'>Home</a></li></ul>
+    </div>
+  </nav>
+
+</section><section class='widget widget-taxonomy_cloud sep-after'>
+  <header>
+    <h4 class='title widget-title'>Tags</h4>
+  </header>
+
+  <div class='container list-container'>
+  <ul class='list taxonomy-cloud'><li>
+        <a href='/tags/bash/' style='font-size:1em'>bash</a>
+      </li><li>
+        <a href='/tags/java/' style='font-size:1em'>java</a>
+      </li><li>
+        <a href='/tags/ldap/' style='font-size:1em'>ldap</a>
+      </li><li>
+        <a href='/tags/octave/' style='font-size:1em'>octave</a>
+      </li><li>
+        <a href='/tags/python/' style='font-size:2em'>python</a>
+      </li></ul>
+</div>
+
+
+</section>
+</div>
+
+  <div class='sidebar-overlay'></div>
+</div><div class='main'><nav id='main-menu' class='menu main-menu' aria-label='Main Menu'>
+  <div class='container'>
+    <a class='screen-reader-text' href='#content'>Skip to Content</a>
+
+<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
+  <span class='screen-reader-text'>Toggle Sidebar</span>
+  <span class='open'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="3" y1="12" x2="21" y2="12" />
+  <line x1="3" y1="6" x2="21" y2="6" />
+  <line x1="3" y1="18" x2="21" y2="18" />
+  
+</svg>
+</span>
+  <span class='close'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+  
+</svg>
+</span>
+</button>
+    <ul></ul>
+  </div>
+</nav><div class='header-widgets'>
+        <div class='container'></div>
+      </div>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>Technotes</p><p class='desc site-desc'></p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>Custom Tab Completion in Bash</h1>
+      
+
+    </div>
+    <div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2011-05-05T01:00:00-08:00'>2011, May 05</time>
+</span>
+
+  
+  
+
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+<details class='container entry-toc'>
+  <summary class='title'>
+    <span>Table of Contents</span>
+  </summary>
+  
+</details>
+
+
+  <div class='container entry-content'>
+  <p>Everyone with even a little experience in Unix has their own special aliases.
+Maybe you have:</p>
+
+<pre><code class="language-sh">alias cdw=&quot;cd ~/workspace&quot;
+</code></pre>
+
+<p>to take you to the directory where you have your projects. Maybe you have some
+really sophisticated aliases that change your bash configuration and path when
+you hit a certain directory.</p>
+
+<p>One of the challenges I found when I moved off of csh to bash was csh aliases
+had parameters, so you could make niffty aliases that had some value in the
+middle:</p>
+
+<pre><code class="language-sh">alias fi 'find . -name \!:1 -exec vim {} \;'
+</code></pre>
+
+<p>(The first alias I ever used, from my friend William Hui). Using this alias, if
+you run:</p>
+
+<pre><code class="language-sh">fi mycode.c
+</code></pre>
+
+<p>It will search through the directory tree to find mycode.c and open it in vim.
+Bash doesn&rsquo;t seem to give you the same level of control over alias parameters.
+However, recently I&rsquo;ve learned that you can create a bash function, and it will
+run like a command on the command line.</p>
+
+<p>Since fi is a reserved word that closes an if statement in bash, we&rsquo;ll switch
+from fi to fim. Then create this in a file (functions.sh):</p>
+
+<pre><code class="language-sh">fim() {
+    test ! -z &quot;$1&quot; &amp;&amp; find . -name $1 -exec vim {} \;
+}
+</code></pre>
+
+<p>and source the file in your current environment:</p>
+
+<pre><code class="language-sh">source functions.sh
+</code></pre>
+
+<p>then this works in bash:</p>
+
+<pre><code class="language-sh">fim mycode.c
+</code></pre>
+
+<p>Since you are now using a bash function instead of an alias, you can squeeze
+any amount of bash code you want in there, format it nicely, even (possibly)
+comment it. Aliases can get pretty crazy sometimes but a bash function should
+be fairly readable.</p>
+
+<p>So, that&rsquo;s cool, flexible bash functions instead of aliases. Which brings me to
+my next trick. Everyone loves tab completion. Okay, that may be a fairly
+sweeping statement, but watching people use the Unix command line, I think I
+can safely say most people love tab completion.</p>
+
+<p>With newer versions of bash, you can build your own custom tab completion. Lets
+say you have a directory where you do a lot of your work, and you often want to
+go there to some project.</p>
+
+<pre><code class="language-sh">wcd() {
+    cd ~/workspace
+}
+</code></pre>
+
+<p>That&rsquo;s cool, anywhere you are</p>
+
+<pre><code class="language-sh">wcd
+</code></pre>
+
+<p>takes you there. However, now that it&rsquo;s a bash function, it&rsquo;s really straight
+forward to augment it a little:</p>
+
+<pre><code class="language-sh">wcd() {
+    cd ~/workspace/$1
+}
+</code></pre>
+
+<p>That&rsquo;s cool too. Now, assuming your working directory looks like this:</p>
+
+<pre><code class="language-sh">[jsimpson@jsimpson-lnx1 workspace]$ ls
+bookcatalog/  mashup/  mywebsite/  out.html
+</code></pre>
+
+<p>you can:</p>
+
+<pre><code class="language-sh">wcd bookcatalog
+</code></pre>
+
+<p>and anywhere you are will take you to ~/workspace/bookcatalog. However, if your
+workspace looks like mine, it has many projects, some of which haven&rsquo;t been
+worked on in months or years. Sometimes I need a little help to remember where
+I&rsquo;m going. Wouldn&rsquo;t a custom tab complete be great?</p>
+
+<pre><code class="language-sh">wcd() {
+    cd ~/workspace/$1
+}
+
+_wcd() {
+    local cur opts
+    cur=&quot;${COMP_WORDS[COMP_CWORD]}&quot;
+    opts=$(cd ~/workspace ; ls -d */. | sed 's|/./||')
+    COMPREPLY=($(compgen -W &quot;${opts}&quot; -- ${cur}))
+}
+complete -F _wcd wcd
+</code></pre>
+
+<p>The first function we&rsquo;ve seen before. Once you press enter on the command line,
+this is the function that will do the work of changing you to a new directory.</p>
+
+<p>Last line first, complete is a utility that registers a function (-F for
+function) to be run every time you tab when wcd is the first command on the
+command line.</p>
+
+<p>_wcd is the function that computes your list of possible completions.</p>
+
+<p>local - sets up some local variables.</p>
+
+<p>cur - gets the last element of the COMP_WORDS array, which is a special bash
+variable that holds the array of parameters to the command line you are
+pressing tab on.</p>
+
+<p>opts - this line gets a string of space delimited words that are possible
+completions, something that will look like this &ldquo;dir1 dir2 dir3&rdquo;.</p>
+
+<p>COMPREPLY - this is a special bash variable that is an array of all the
+possible completions. So, if you are here:</p>
+
+<pre><code class="language-sh">wcd m
+</code></pre>
+
+<p>When you hit tab, the function will run and evaluate like this:</p>
+
+<pre><code class="language-sh">cur=&quot;m&quot;
+opts=&quot;bookcatalog mashup mywebsite&quot;
+COMPREPLY=(mashup mywebsite)
+</code></pre>
+
+<p>and on the command line you will see this:</p>
+
+<pre><code class="language-sh">[jsimpson@jsimpson-lnx1 workspace]$ wcd m
+mashup     mywebsite
+</code></pre>
+
+<ul>
+<li><a href="http://www.debian-administration.org/article/316/An_introduction_to_bash_completion_part_1">Debian Administrator&rsquo;s Introduction to Bash Completion</a></li>
+</ul>
+
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'><div class='tags'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/bash/'>bash</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='next-entry sep-before'>
+      <a href='/docs/search-fuse-js/'>
+        <span class='screen-reader-text'>Next post: </span>Customizing the Python Interpreter<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
+</nav>
+
+
+
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><div class='copyright'>
+  <p></p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__assets_js_src="/assets/js/"</script>
+
+<script src='/assets/js/main.67d669ac.js'></script>
+
+</body>
+
+</html>
+

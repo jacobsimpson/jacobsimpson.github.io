@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bash on Technotes</title>
+    <link>http://jacobsimpson.github.io/tags/bash/</link>
+    <description>Recent content in bash on Technotes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 May 2011 01:00:00 -0800</lastBuildDate>
+    
+	<atom:link href="http://jacobsimpson.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Custom Tab Completion in Bash</title>
+      <link>http://jacobsimpson.github.io/docs/search-fuse-js/</link>
+      <pubDate>Thu, 05 May 2011 01:00:00 -0800</pubDate>
+      
+      <guid>http://jacobsimpson.github.io/docs/search-fuse-js/</guid>
+      <description>Everyone with even a little experience in Unix has their own special aliases. Maybe you have:
+alias cdw=&amp;quot;cd ~/workspace&amp;quot;  to take you to the directory where you have your projects. Maybe you have some really sophisticated aliases that change your bash configuration and path when you hit a certain directory.
+One of the challenges I found when I moved off of csh to bash was csh aliases had parameters, so you could make niffty aliases that had some value in the middle:</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ldap on Technotes</title>
+    <link>http://jacobsimpson.github.io/tags/ldap/</link>
+    <description>Recent content in ldap on Technotes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 19 Dec 2015 01:00:00 -0800</lastBuildDate>
+    
+	<atom:link href="http://jacobsimpson.github.io/tags/ldap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LDAP</title>
+      <link>http://jacobsimpson.github.io/docs/search-fuse-js/</link>
+      <pubDate>Sat, 19 Dec 2015 01:00:00 -0800</pubDate>
+      
+      <guid>http://jacobsimpson.github.io/docs/search-fuse-js/</guid>
+      <description>It doesn&amp;rsquo;t happen to me very often, but every now and again I run into an LDAP problem. It usually shows up as I can&amp;rsquo;t log into a system that everyone knows authenticates against the LDAP server. Or, even rarer, I&amp;rsquo;m building something that authenticates against, or takes configuration from, an LDAP server.
+The most important thing to understand about LDAP is that it is a read optimized, hierarchical database. Since it&amp;rsquo;s a database, you need a connection URL, the query language, and enough of the schema to know what to query.</description>
+    </item>
+    
+  </channel>
+</rss>

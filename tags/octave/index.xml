@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>octave on Technotes</title>
+    <link>http://jacobsimpson.github.io/tags/octave/</link>
+    <description>Recent content in octave on Technotes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 Mar 2012 01:00:00 -0800</lastBuildDate>
+    
+	<atom:link href="http://jacobsimpson.github.io/tags/octave/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Graphin Gaussian Curves</title>
+      <link>http://jacobsimpson.github.io/docs/search-fuse-js/</link>
+      <pubDate>Sun, 04 Mar 2012 01:00:00 -0800</pubDate>
+      
+      <guid>http://jacobsimpson.github.io/docs/search-fuse-js/</guid>
+      <description>I&amp;rsquo;ve been working my way through Prof. Sebastian Thrun&amp;rsquo;s second AI course, CS 373 Programming a Robotic Car that he is offering through the new company, Udacity. In week two he covers Kalman filters as a method of estimating location given uncertainty in sensor data and uncertainty in movement.
+In an effort to get a better understanding of how the variables affect the shape of the Gaussian distribution that represents the probable state of the variables being modelled, I fired up Octave.</description>
+    </item>
+    
+  </channel>
+</rss>

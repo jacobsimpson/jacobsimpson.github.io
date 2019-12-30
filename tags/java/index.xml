@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java on Technotes</title>
+    <link>http://jacobsimpson.github.io/tags/java/</link>
+    <description>Recent content in java on Technotes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Dec 2015 01:00:00 -0800</lastBuildDate>
+    
+	<atom:link href="http://jacobsimpson.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Packing a Java Application into a Single Jar</title>
+      <link>http://jacobsimpson.github.io/docs/search-fuse-js/</link>
+      <pubDate>Sun, 20 Dec 2015 01:00:00 -0800</pubDate>
+      
+      <guid>http://jacobsimpson.github.io/docs/search-fuse-js/</guid>
+      <description>Sometimes I have a little program built in some JVM language. Usually it&amp;rsquo;s a simple command line utility, maybe something that tests database connectivity via a JDBC connection, a simple JMS utility or a utility analogous to ping but for UDP.
+The point is, I want to make it easy to set it up and move it from machine to machine. I just want to run it from the command line and have it work.</description>
+    </item>
+    
+  </channel>
+</rss>

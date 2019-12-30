@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on Technotes</title>
+    <link>http://jacobsimpson.github.io/docs/</link>
+    <description>Recent content in Docs on Technotes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Dec 2015 01:00:00 -0800</lastBuildDate>
+    
+	<atom:link href="http://jacobsimpson.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Packing a Java Application into a Single Jar</title>
+      <link>http://jacobsimpson.github.io/docs/search-fuse-js/</link>
+      <pubDate>Sun, 20 Dec 2015 01:00:00 -0800</pubDate>
+      
+      <guid>http://jacobsimpson.github.io/docs/search-fuse-js/</guid>
+      <description>Sometimes I have a little program built in some JVM language. Usually it&amp;rsquo;s a simple command line utility, maybe something that tests database connectivity via a JDBC connection, a simple JMS utility or a utility analogous to ping but for UDP.
+The point is, I want to make it easy to set it up and move it from machine to machine. I just want to run it from the command line and have it work.</description>
+    </item>
+    
+    <item>
+      <title>LDAP</title>
+      <link>http://jacobsimpson.github.io/docs/search-fuse-js/</link>
+      <pubDate>Sat, 19 Dec 2015 01:00:00 -0800</pubDate>
+      
+      <guid>http://jacobsimpson.github.io/docs/search-fuse-js/</guid>
+      <description>It doesn&amp;rsquo;t happen to me very often, but every now and again I run into an LDAP problem. It usually shows up as I can&amp;rsquo;t log into a system that everyone knows authenticates against the LDAP server. Or, even rarer, I&amp;rsquo;m building something that authenticates against, or takes configuration from, an LDAP server.
+The most important thing to understand about LDAP is that it is a read optimized, hierarchical database. Since it&amp;rsquo;s a database, you need a connection URL, the query language, and enough of the schema to know what to query.</description>
+    </item>
+    
+    <item>
+      <title>Logging to sysd from Python</title>
+      <link>http://jacobsimpson.github.io/docs/search-fuse-js/</link>
+      <pubDate>Wed, 02 May 2012 01:00:00 -0800</pubDate>
+      
+      <guid>http://jacobsimpson.github.io/docs/search-fuse-js/</guid>
+      <description>On Unix there is a syslog service that handles centralized logging. Using it for logging from your daemons has the advantage of putting control of the logging options in the hands of the system administrator, without involving you, the developer. If they want certain log rotations, or there is a preferred directory, or if the logs are sent over the network to a central logging server, it has nothing to do with you, as long as you are logging to syslog.</description>
+    </item>
+    
+    <item>
+      <title>Graphin Gaussian Curves</title>
+      <link>http://jacobsimpson.github.io/docs/search-fuse-js/</link>
+      <pubDate>Sun, 04 Mar 2012 01:00:00 -0800</pubDate>
+      
+      <guid>http://jacobsimpson.github.io/docs/search-fuse-js/</guid>
+      <description>I&amp;rsquo;ve been working my way through Prof. Sebastian Thrun&amp;rsquo;s second AI course, CS 373 Programming a Robotic Car that he is offering through the new company, Udacity. In week two he covers Kalman filters as a method of estimating location given uncertainty in sensor data and uncertainty in movement.
+In an effort to get a better understanding of how the variables affect the shape of the Gaussian distribution that represents the probable state of the variables being modelled, I fired up Octave.</description>
+    </item>
+    
+    <item>
+      <title>Customizing the Python Interpreter</title>
+      <link>http://jacobsimpson.github.io/docs/search-fuse-js/</link>
+      <pubDate>Thu, 30 Jun 2011 01:00:00 -0800</pubDate>
+      
+      <guid>http://jacobsimpson.github.io/docs/search-fuse-js/</guid>
+      <description>I was working with a friend on debugging an odd pickling issue. In order to really play with it, we started a Python interpreter and ran through the list of imports and sys.path.appends necessary to set up active database and memcache connections, as well as load the project code.
+My friend mentioned that he had a python session on his desktop that he never dared to close, since the setup had been so much trouble.</description>
+    </item>
+    
+    <item>
+      <title>Custom Tab Completion in Bash</title>
+      <link>http://jacobsimpson.github.io/docs/search-fuse-js/</link>
+      <pubDate>Thu, 05 May 2011 01:00:00 -0800</pubDate>
+      
+      <guid>http://jacobsimpson.github.io/docs/search-fuse-js/</guid>
+      <description>Everyone with even a little experience in Unix has their own special aliases. Maybe you have:
+alias cdw=&amp;quot;cd ~/workspace&amp;quot;  to take you to the directory where you have your projects. Maybe you have some really sophisticated aliases that change your bash configuration and path when you hit a certain directory.
+One of the challenges I found when I moved off of csh to bash was csh aliases had parameters, so you could make niffty aliases that had some value in the middle:</description>
+    </item>
+    
+  </channel>
+</rss>
