@@ -18,7 +18,7 @@
       
       <guid>http://jacobsimpson.github.io/docs/search-fuse-js/</guid>
       <description>Everyone with even a little experience in Unix has their own special aliases. Maybe you have:
-alias cdw=&amp;quot;cd ~/workspace&amp;quot;  to take you to the directory where you have your projects. Maybe you have some really sophisticated aliases that change your bash configuration and path when you hit a certain directory.
+alias cdw=&amp;#34;cd ~/workspace&amp;#34; to take you to the directory where you have your projects. Maybe you have some really sophisticated aliases that change your bash configuration and path when you hit a certain directory.
 One of the challenges I found when I moved off of csh to bash was csh aliases had parameters, so you could make niffty aliases that had some value in the middle:</description>
     </item>
     
