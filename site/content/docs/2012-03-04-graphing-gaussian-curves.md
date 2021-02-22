@@ -1,7 +1,7 @@
 ---
 date: 2012-03-04T01:00:00-08:00
 lastmod: 2012-03-04T01:00:00-08:00
-title: "Graphin Gaussian Curves"
+title: "Graphing Gaussian Curves"
 tags:
   - octave
 slug: search-fuse-js
