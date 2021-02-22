@@ -14,6 +14,13 @@ toc: true
 * parser
     * JSON parser
     * CSV parser
+    * Lisp parser
+    * HTML parser
+    * multi-term equation parser, honoring operator precedence
+    * SQL Parser
+    * programming language with variables, if statements, while statement that
+      rewrites into another language
+    * regular expression
 * Binary tree 
 
 # Exploration Practices
